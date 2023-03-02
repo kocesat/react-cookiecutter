@@ -98,7 +98,8 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       w={{ base: '0', md: 'xs' }}
       pos="fixed"
       h="full"
-      {...rest}>
+      {...rest}
+    >
       <Flex direction='column' justifyContent='space-between'>
         <Box>
           <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
@@ -113,12 +114,12 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           ))}
         </Box>
         <Flex justifyContent='flex-end'>
-          <IconButton
-            aria-label="close menu"
-            icon={<FiChevronsLeft />}
+          <Button
             onClick={onClose}
             variant='outline'
-          />
+          >
+            <Icon as={FiChevronsLeft}  boxSize={7} />
+          </Button>
         </Flex>
       </Flex>
     </Box>
