@@ -1,0 +1,42 @@
+.totalBalanceCard {
+    min-height: 200px;
+}
+
+.totalBalanceCard__body {
+    padding: 40px 60px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.totalBalanceCard__bodyDivider {
+    display: none !important;
+}
+
+@media only screen and (max-width: 723px) {
+    .totalBalanceCard__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .totalBalanceCard__bodyDivider {
+        display: block !important;
+    }
+}
+
+.totalBalanceCard__bodyLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.totalBalanceCard__bodyRight {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 20px;
+    padding: 20px 20px;
+}
