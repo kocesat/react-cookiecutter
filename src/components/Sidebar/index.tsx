@@ -35,6 +35,7 @@ import {
   FiTrendingUp,
 } from 'react-icons/fi';
 import {IconType} from 'react-icons';
+import ColorModeSwitcher from "../ColorModeSwitcher";
 
 interface LinkItemProps {
   name: string;
@@ -51,9 +52,8 @@ const LinkItems: Array<LinkItemProps> = [
 function Sidebar({children,}: {
   children: ReactNode;
 }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure({defaultIsOpen: true});
   const [ isLargeDevice ] = useMediaQuery('(min-width: 768px)')
-
 
   return (
     <>
@@ -197,6 +197,7 @@ const MobileNav = ({ onOpen, isOpen, onClose, ...rest }: MobileProps) => {
       </Text>
 
       <HStack spacing={{ base: '0', md: '6' }}>
+        <ColorModeSwitcher />
         <IconButton
           size="lg"
           variant="ghost"

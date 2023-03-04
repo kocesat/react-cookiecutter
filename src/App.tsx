@@ -1,16 +1,8 @@
 import * as React from "react"
-import {
-  ChakraProvider,
-  Box, StyleFunctionProps, Divider, Flex
-} from "@chakra-ui/react";
-import ColorModeSwitcher from "./components/ColorModeSwitcher";
-import TotalBalanceCard from "./components/TotalBalanceCard";
-import { extendTheme } from '@chakra-ui/react';
-import { mode } from '@chakra-ui/theme-tools'
-import Segment from "./components/Segment";
-import SidebarMenu from "./components/SidebarMenu";
+import {ChakraProvider, extendTheme, StyleFunctionProps} from "@chakra-ui/react";
+import {mode} from '@chakra-ui/theme-tools'
 import Sidebar from "./components/Sidebar";
-
+import Card3Dot from "./components/Card3Dot";
 
 const theme = extendTheme({
   styles: {
@@ -127,12 +119,7 @@ const theme = extendTheme({
 export const App = () => (
   <ChakraProvider theme={theme}>
         <Sidebar>
-        <ColorModeSwitcher />
-        <Flex flexDirection='column' alignItems='center'>
-          <Segment isLoading>
-
-          </Segment>
-        </Flex>
+          <Card3Dot />
         </Sidebar>
   </ChakraProvider>
 )
