@@ -76,7 +76,7 @@ function Sidebar({children,}: {
         )}
         {/* mobilenav */}
         <MobileNav onOpen={onOpen} isOpen={isOpen} onClose={onClose} />
-        <Box ml={{ base: 0, md: isOpen ? 305 : 0 }} p="4">
+        <Box ml={{ base: 0, md: isOpen ? 320 : 0 }} p="4">
           {children}
         </Box>
       </Box>
@@ -100,7 +100,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       h="full"
       {...rest}
     >
-      <Flex direction='column' justifyContent='space-between'>
+      <Flex h="full" direction='column' justifyContent='space-between' >
         <Box>
           <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
             <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
@@ -113,14 +113,14 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             </NavItem>
           ))}
         </Box>
-        <Flex justifyContent='flex-end'>
+        <Box display='flex' justifyContent='flex-end'>
           <Button
             onClick={onClose}
-            variant='outline'
+            variant='ghost'
           >
             <Icon as={FiChevronsLeft}  boxSize={7} />
           </Button>
-        </Flex>
+        </Box>
       </Flex>
     </Box>
   );
