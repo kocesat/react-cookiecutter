@@ -1,10 +1,16 @@
 import * as React from "react"
-import {ChakraProvider, extendTheme, StyleFunctionProps} from "@chakra-ui/react";
+import {Box, ChakraProvider, Divider, extendTheme, Flex, Grid, GridItem, StyleFunctionProps} from "@chakra-ui/react";
 import {mode} from '@chakra-ui/theme-tools'
 import Sidebar from "./components/Sidebar";
 import Card3Dot from "./components/Card3Dot";
+import '@fontsource/roboto/400.css';
+import TotalBalanceCard from "./components/TotalBalanceCard";
+import Segment from "./components/Segment";
 
 const theme = extendTheme({
+  fonts: {
+    body: `'Roboto', sans-serif`,
+  },
   styles: {
     global: (props: StyleFunctionProps) => ({
       body: {
@@ -119,7 +125,12 @@ const theme = extendTheme({
 export const App = () => (
   <ChakraProvider theme={theme}>
         <Sidebar>
-          <Card3Dot />
+          <TotalBalanceCard />
+          <Box my='12px' />
+          <Segment>
+            <Box>Inside a segment</Box>
+          </Segment>
+          <Box my='12px' />
         </Sidebar>
   </ChakraProvider>
 )

@@ -1,5 +1,6 @@
 import {Box, Card, Flex, SkeletonCircle, SkeletonText, Spinner, useColorModeValue} from "@chakra-ui/react";
 import React, {ReactNode} from "react";
+import styles from './style.module.css';
 
 interface SegmentProps {
   isLoading?: boolean;
@@ -15,7 +16,7 @@ const Segment: React.FC<SegmentProps> = (
   const renderContent = () => {
     return (
       isLoading ? (
-          <Box padding='6' boxShadow='lg'>
+          <Box>
             <SkeletonCircle size='10' />
             <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
           </Box>
@@ -29,6 +30,7 @@ const Segment: React.FC<SegmentProps> = (
     boxShadow: 'xl',
     fontWeight: 'normal',
     variant: 'elevated',
+    p: 6,
     bg: useColorModeValue('white', 'gray.700'),
   }
 
