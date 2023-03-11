@@ -1,11 +1,10 @@
 import * as React from "react"
-import {Box, ChakraProvider, Divider, extendTheme, Flex, Grid, GridItem, StyleFunctionProps} from "@chakra-ui/react";
+import {ChakraProvider, extendTheme, StyleFunctionProps} from "@chakra-ui/react";
 import {mode} from '@chakra-ui/theme-tools'
 import Sidebar from "./components/Sidebar";
-import Card3Dot from "./components/Card3Dot";
 import '@fontsource/roboto/400.css';
-import TotalBalanceCard from "./components/TotalBalanceCard";
-import Segment from "./components/Segment";
+import DataTable from "./components/DataTable";
+import IssueTable from "./components/IssueTable";
 
 const theme = extendTheme({
   fonts: {
@@ -121,16 +120,10 @@ const theme = extendTheme({
     }
   }
 );
-
 export const App = () => (
   <ChakraProvider theme={theme}>
         <Sidebar>
-          <TotalBalanceCard />
-          <Box my='12px' />
-          <Segment>
-            <Box>Inside a segment</Box>
-          </Segment>
-          <Box my='12px' />
+          <IssueTable />
         </Sidebar>
   </ChakraProvider>
 )
