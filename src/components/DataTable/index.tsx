@@ -27,6 +27,7 @@ export interface TableColumn {
   key: string,
   name: string,
   isNumeric?: boolean;
+  renderCell?: (arg0: any) => void;
 }
 
 const DataTable: React.FC<DataTableProps> =
@@ -60,7 +61,7 @@ const DataTable: React.FC<DataTableProps> =
                   _hover={{ bgColor: 'gray.100', color: 'gray.900' }}
                 >
                   {columns.map(col => {
-                    const cell = row[col.key];
+                    const cell = col.renderCell ? col.renderCell(row) : row[col.key];
                     return (
                       <Td key={`rowCol_${col.key}`}>
                         {cell}

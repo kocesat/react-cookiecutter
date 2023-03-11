@@ -1,6 +1,7 @@
 import React from "react";
 import DataTable, {TableColumn} from "../DataTable";
-import {Badge, Heading} from "@chakra-ui/react";
+import {Badge, Flex, Heading, Icon, IconButton} from "@chakra-ui/react";
+import {FaRegEdit, MdDeleteForever} from "react-icons/all";
 
 const IssueTable = () => {
 
@@ -19,10 +20,45 @@ const IssueTable = () => {
       key: 'closed',
       name: 'Is Closed',
       isNumeric: false,
+      renderCell: row => (
+        <Badge colorScheme={row.closed === 'Open' ? 'orange' : 'red'}>
+          {row.closed === 'Open' ? 'Open' : 'Closed'}
+        </Badge>
+      ),
+    },
+    {
+      key: 'operations',
+      name: 'Operations',
+      isNumeric: false,
+      renderCell: row => (
+        <Flex justifyContent='flex-start' gap='2px'>
+          <IconButton
+            size='sm'
+            isRound
+            colorScheme='blue'
+            icon={<Icon as={FaRegEdit} />}
+            onClick={() => console.log('btn clicked')}
+            aria-label='change status'
+          ></IconButton>
+          <IconButton
+            size='sm'
+            isRound
+            colorScheme='red'
+            icon={<Icon as={MdDeleteForever} />}
+            onClick={() => console.log('btn clicked')}
+            aria-label='delete issue'
+          ></IconButton>
+        </Flex>
+      ),
     },
   ];
 
   const issues = [
+    {
+      title: 'Closed Issue',
+      status: <Badge colorScheme='blue'>Done</Badge>,
+      closed: 'Closed',
+    },
     {
       title: 'First Issue',
       status: <Badge colorScheme='blue'>In Progress</Badge>,
@@ -30,7 +66,7 @@ const IssueTable = () => {
     },
     {
       title: 'Second Issue',
-      status: <Badge colorScheme='yellow'>Todo</Badge>,
+      status: <Badge colorScheme='gray'>Todo</Badge>,
       closed: 'Open',
     },
     {
