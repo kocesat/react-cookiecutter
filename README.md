@@ -1,4 +1,4 @@
-![Scheme](src/assets/images/85FEADDF-DA86-4855-93D2-71D6060CBE8E.jpeg)
+![Scheme](src/assets/images/app_photo.jpeg)
 
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
