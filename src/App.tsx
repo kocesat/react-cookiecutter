@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 import '@fontsource/roboto/400.css';
 import DataTable from "./components/DataTable";
 import IssueTable from "./components/IssueTable";
+import FileUploader from "./components/FileUploader";
 
 const theme = extendTheme({
   fonts: {
@@ -123,7 +124,7 @@ const theme = extendTheme({
 export const App = () => (
   <ChakraProvider theme={theme}>
         <Sidebar>
-          <IssueTable />
+          <FileUploader onUpload={() => console.log("Files are uploading...") } />
         </Sidebar>
   </ChakraProvider>
 )

@@ -1,0 +1,18 @@
+.fileUploadTarget {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    border: 2px solid gray;
+    background: #fafafa;
+}
+
+.fileUploadTarget input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
