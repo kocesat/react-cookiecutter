@@ -1,5 +1,5 @@
 import React from "react";
-import DataTable, {TableColumn} from "../DataTable";
+import DataTable, {TableColumn} from "../../common/components/DataTable";
 import {Badge, Flex, Heading, Icon, IconButton} from "@chakra-ui/react";
 import {FaRegEdit, MdDeleteForever} from "react-icons/all";
 
