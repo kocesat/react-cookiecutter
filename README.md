@@ -1,3 +1,5 @@
+This project will be merged with another product and be deleted soon!
+
 ![Scheme](src/assets/images/app_photo.jpeg)
 ![Scheme](src/assets/images/file_uploader.jpeg)
 
